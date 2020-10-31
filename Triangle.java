@@ -15,6 +15,21 @@ public class Triangle{
 		v2 = new Point(x2, y2);
 		v3 = new Point(x3, y3);
 	}
-
 	
+	public static double getDist(Point a, Point b){
+		return Math.sqrt((a.getX() - b.getX())*(a.getX() - b.getX()) + (a.getY() - b.getY())*(a.getY() - b.getY()));
+	}
+
+	public double getPerimeter(){
+		return getDist(v1, v2) + getDist(v2, v3) + getDist(v1, v3);
+	}	
+
+	public double getArea(){
+		double a = getDist(v1, v2);
+		double b = getDist(v2, v3);
+		double c = getDist(v1, v3);
+		double s = (a+b+c)/2;
+		return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+	}
+
 }
