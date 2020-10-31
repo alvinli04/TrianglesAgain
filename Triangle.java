@@ -31,5 +31,20 @@ public class Triangle{
 		double s = (a+b+c)/2;
 		return Math.sqrt(s*(s-a)*(s-b)*(s-c));
 	}
+	
+	public String classify(){
+		double a = getDist(v1, v2);
+		double b = getDist(v2, v3);
+		double c = getDist(v1, v3);
+		a = Math.round(a*10000)/10000.0;
+		b = Math.round(b*10000)/10000.0;
+		c = Math.round(c*10000)/10000.0;
+		if(a==b && b==c) return "equilateral";
+		else if(a==b || b==c) return "isosceles";
+		return "scalene";
+	}
 
+	public String toString(){
+		return "v1(" + v1.getX() + ", " + v1.getY() + ") v2(" + v2.getX() + ", " + v2.getY() + ") v3(" + v3.getX() + ", " + v3.getY() + ")"; 
+	}
 }
