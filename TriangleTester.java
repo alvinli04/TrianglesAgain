@@ -11,5 +11,11 @@ public class TriangleTester{
 		System.out.println(t2.getArea());
 		System.out.println(t2.getPerimeter());
 		System.out.println(t1);
+		Triangle equil = new Triangle(1,0,-1,0,0,Math.sqrt(3));
+		Triangle isos = new Triangle(-1,0,0,-1,5,5);
+		Triangle scalene = new Triangle(1,1,5,5,5,0);
+		System.out.println(equil.classify());
+		System.out.println(isos.classify());
+		System.out.println(scalene.classify());
 	}
 }
